@@ -6,14 +6,7 @@ const App = () => {
   return (
     <SnackbarProvider>
       <CssBaseline />
-      <AppBar
-        position="absolute"
-        color="default"
-        elevation={0}
-        sx={{
-          position: 'relative',
-        }}
-      >
+      <AppBar variant="outlined" position="relative">
         <Toolbar>
           <Typography variant="h6" color="inherit" noWrap>
             Tags Calculator
