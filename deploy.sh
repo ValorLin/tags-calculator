@@ -11,6 +11,9 @@ yarn build
 # Create a new `gh-pages` branch and switch to it
 git checkout -b gh-pages
 
+# Remove all existing files in the current directory (the root directory of the `gh-pages` branch)
+git rm -rf .
+
 # Copy all files in the `dist` directory to the current directory (the root directory of the `gh-pages` branch)
 cp -R dist/* .
 
