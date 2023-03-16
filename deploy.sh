@@ -1,13 +1,6 @@
 #!/bin/bash
-
 # Get the current version number from package.json
 VERSION=$(node -pe "require('./package.json').version")
-
-# Increment the version number
-NEW_VERSION=$(echo $VERSION | awk -F. '{$NF+=1; OFS="."; print $0}')
-
-# Update the version number in package.json
-npm version $NEW_VERSION --no-git-tag-version
 
 # Clean up previous build files
 rm -rf dist
@@ -26,10 +19,10 @@ git add .
 git commit -m "Deploy to gh-pages"
 
 # Create a new git tag
-git tag v$NEW_VERSION
+git tag v$VERSION
 
 # Push the tag and the `gh-pages` branch to the remote repository
-git push origin v$NEW_VERSION
+git push origin v$VERSION
 git push origin gh-pages
 
 # Switch back to the original branch
